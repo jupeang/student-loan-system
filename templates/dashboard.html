@@ -1,0 +1,396 @@
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Student Loan Dashboard</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h2 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        .card p {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        .total h2 {
+            color: #007bff;
+        }
+
+        .approved h2 {
+            color: green;
+        }
+
+        .not-approved h2 {
+            color: red;
+        }
+
+        .money h2 {
+            color: #6f42c1;
+        }
+
+        .recent-applications {
+            background: white;
+            margin-top: 30px;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .recent-applications h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        .recent-applications table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 650px;
+        }
+
+        .recent-applications th,
+        .recent-applications td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .recent-applications th {
+            background: #eee;
+        }
+
+        .recent-applications tr:hover {
+            background: #f8f8f8;
+        }
+
+        .recent-approved {
+            color: green;
+            font-weight: bold;
+        }
+
+        .recent-rejected {
+            color: red;
+            font-weight: bold;
+        }
+
+        .recent-pending {
+            color: orange;
+            font-weight: bold;
+        }
+
+        .links {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .links a {
+            display: inline-block;
+            padding: 12px 18px;
+            margin: 5px;
+            background: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .links a:hover {
+            background: #555;
+        }
+
+        @media (max-width: 800px) {
+
+            .dashboard {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        @media (max-width: 500px) {
+
+            body {
+                padding: 15px;
+            }
+
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Student Loan Dashboard</h1>
+
+
+        <div class="dashboard">
+
+            <div class="card total">
+
+                <h2 id="totalApplications">0</h2>
+
+                <p>Total Applications</p>
+
+            </div>
+
+
+            <div class="card approved">
+
+                <h2 id="approvedApplications">0</h2>
+
+                <p>Approved</p>
+
+            </div>
+
+
+            <div class="card not-approved">
+
+                <h2 id="notApprovedApplications">0</h2>
+
+                <p>Not Approved</p>
+
+            </div>
+
+
+            <div class="card money">
+
+                <h2 id="totalLoan">KSh 0</h2>
+
+                <p>Total Loan Requested</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="recent-applications">
+
+            <h2>Recent Applications</h2>
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Student</th>
+
+                            <th>Student ID</th>
+
+                            <th>Course</th>
+
+                            <th>Amount</th>
+
+                            <th>Status</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="recentApplications">
+
+                        <tr>
+
+                            <td colspan="5">
+                                Loading applications...
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+        <div class="links">
+
+            <a href="/">
+                Apply for Loan
+            </a>
+
+            <a href="/applications">
+                View Applications
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        fetch("/api/dashboard")
+
+        .then(response => response.json())
+
+        .then(data => {
+
+            document.getElementById("totalApplications").innerText =
+                data.total_applications;
+
+            document.getElementById("approvedApplications").innerText =
+                data.approved_applications;
+
+            document.getElementById("notApprovedApplications").innerText =
+                data.not_approved_applications;
+
+            document.getElementById("totalLoan").innerText =
+                "KSh " + Number(data.total_loan || 0).toLocaleString();
+
+
+            let applications = data.recent_applications || [];
+
+            let output = "";
+
+
+            if (applications.length === 0) {
+
+                output = `
+
+                    <tr>
+
+                        <td colspan="5">
+                            No recent applications found.
+                        </td>
+
+                    </tr>
+
+                `;
+
+            } else {
+
+                applications.forEach(application => {
+
+                    let statusClass = "";
+
+                    if (application.status === "Approved") {
+
+                        statusClass = "recent-approved";
+
+                    } else if (
+                        application.status === "Not Approved" ||
+                        application.status === "Rejected"
+                    ) {
+
+                        statusClass = "recent-rejected";
+
+                    } else {
+
+                        statusClass = "recent-pending";
+
+                    }
+
+
+                    output += `
+
+                        <tr>
+
+                            <td>
+                                ${application.name || ""}
+                            </td>
+
+                            <td>
+                                ${application.student_id || ""}
+                            </td>
+
+                            <td>
+                                ${application.course || ""}
+                            </td>
+
+                            <td>
+                                KSh ${Number(application.loan_amount || 0).toLocaleString()}
+                            </td>
+
+                            <td class="${statusClass}">
+                                ${application.status || "Pending"}
+                            </td>
+
+                        </tr>
+
+                    `;
+
+                });
+
+            }
+
+
+            document.getElementById("recentApplications").innerHTML = output;
+
+        })
+
+        .catch(error => {
+
+            console.error("Dashboard error:", error);
+
+            document.getElementById("recentApplications").innerHTML = `
+
+                <tr>
+
+                    <td colspan="5">
+                        Failed to load recent applications.
+                    </td>
+
+                </tr>
+
+            `;
+
+        });
+
+    </script>
+
+</body>
+
+</html>
+

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Loan System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Student Loan System</h1>
+
+        <p>Welcome to our student loan application system.</p>
+
+        <form id="loanForm">
+
+            <label>Full Name:</label>
+            <input type="text" name="name" id="name">
+
+            <label>Student ID:</label>
+            <input type="text" name="student_id" id="student_id">
+
+            <label>Course:</label>
+            <input type="text" name="course" id="course">
+
+            <label>Loan Amount:</label>
+            <input type="number" name="loan_amount" id="loan_amount">
+
+            <button type="submit">Apply for Loan</button>
+
+        </form>
+
+        <br>
+
+<a href="/applications">
+    <button type="button">View Applications</button>
+</a>
+
+<a href="/dashboard">
+    <button type="button">Dashboard</button>
+</a>
+
+    <div id="result"></div>   
+
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
