@@ -99,6 +99,19 @@ http://127.0.0.1:5000
 ## 🎯 Project Purpose
 
 This project demonstrates how Python, Flask, JavaScript, and MongoDB can be combined to develop a practical student loan management system.
+## 📸 Screenshots
+
+### Home / Loan Application
+
+![Home Page](screenshots/home.png)
+
+### Applications Page
+
+![Applications Page](screenshots/applications.png)
+
+### Dashboard
+
+![Dashboard](screenshots/dashboard.png)
 
 ## 👨‍💻 Author
 
