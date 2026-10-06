@@ -25,13 +25,13 @@ The purpose of this project is to provide a simple digital solution for managing
 
 ## 🛠️ Technologies Used
 
-* Python
-* Flask
-* HTML5
-* CSS3
-* JavaScript
-* MongoDB
-* MongoDB Compass
+- **Python** – Backend programming
+- **Flask** – Web application framework
+- **HTML5** – Page structure
+- **CSS3** – Styling and layout
+- **JavaScript** – Client-side functionality
+- **MongoDB** – Database management
+- **Git & GitHub** – Version control and project hosting
 
 ## 🔄 System Flow
 
