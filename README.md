@@ -47,6 +47,7 @@ MongoDB Database
 ↓
 Application Result
 
+
 ## 📂 Project Structure
 
 ```text
@@ -65,37 +66,65 @@ student-loan-system/
 └── README.md
 ```
 
-## 💻 Installation
+## 🚀 How to Run the Project
 
-Clone the repository:
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/jupeang/student-loan-system.git
 ```
 
-Enter the project folder:
+### 2. Open the Project
 
 ```bash
 cd student-loan-system
 ```
 
-Install Flask and MongoDB-related dependencies:
+### 3. Create a Virtual Environment
+
+```bash
+python -m venv venv
+```
+
+### 4. Activate the Virtual Environment
+
+**Windows:**
+
+```bash
+venv\Scripts\activate
+```
+
+### 5. Install the Required Packages
 
 ```bash
 pip install flask pymongo
 ```
 
-Start the application:
+### 6. Start MongoDB
+
+Make sure **MongoDB** is installed and running on your computer.
+
+The system uses:
+
+```text
+mongodb://localhost:27017/
+```
+
+### 7. Run the Application
 
 ```bash
 python app.py
 ```
 
-Open your browser and visit:
+### 8. Open the System
+
+Open your browser and go to:
 
 ```text
 http://127.0.0.1:5000
 ```
+
+The Student Loan System should now be running.
 
 ## 🎯 Project Purpose
 
