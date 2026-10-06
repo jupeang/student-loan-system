@@ -54,6 +54,10 @@ Application Result
 student-loan-system/
 │
 ├── app.py
+├── loan.db
+├── requirements.txt
+├── README.md
+│
 ├── static/
 │   ├── script.js
 │   └── style.css
@@ -63,8 +67,38 @@ student-loan-system/
 │   ├── applications.html
 │   └── dashboard.html
 │
-└── README.md
+└── screenshots/
+    ├── home.png
+    ├── applications.png
+    └── dashboard.png
 ```
+
+### 📄 File Description
+
+| File / Folder | Description |
+|---|---|
+| `app.py` | Main Flask application |
+| `loan.db` | Local database file |
+| `requirements.txt` | Python dependencies |
+| `static/` | CSS and JavaScript files |
+| `templates/` | HTML pages |
+| `screenshots/` | Project screenshots |
+| `README.md` | Project documentation |
+```
+
+### Then
+
+1. Add the section to your README.
+2. Click **Commit changes**.
+3. For the commit message, use:
+
+```text
+Add project structure to README
+```
+
+4. Click **Commit changes**.
+
+After that, tell me **done** and we'll move to the next improvement. 🚀
 
 ## 🚀 How to Run the Project
 
