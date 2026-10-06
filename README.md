@@ -160,9 +160,17 @@ http://127.0.0.1:5000
 
 The Student Loan System should now be running.
 
-## 🎯 Project Purpose
+## 🎥 Project Demo
 
-This project demonstrates how Python, Flask, JavaScript, and MongoDB can be combined to develop a practical student loan management system.
+The Student Loan System provides a simple interface for students to submit loan applications and for administrators to view and monitor submitted applications.
+
+### Main System Pages
+
+- 🏠 **Home / Loan Application** – Students submit their loan information.
+- 📋 **Applications** – Displays submitted student loan applications.
+- 📊 **Dashboard** – Provides an overview of loan applications and statistics.
+
+The screenshots below demonstrate the main features and user interface of the system.
 ## 📸 Screenshots
 
 ### Home / Loan Application
