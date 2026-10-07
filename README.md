@@ -1,54 +1,46 @@
 # Student Loan System
 
-A full-stack student loan application system developed to simplify the process of submitting, managing, and reviewing student loan applications.
+A student loan application and management system developed using Python, Flask, HTML, CSS, JavaScript, and MongoDB.
 
-# 🎓 Student Loan System
+The system allows students to submit loan applications and provides a dashboard for viewing submitted applications and monitoring loan requests.
 
-A web-based student loan application and management system developed using **Python, Flask, HTML, CSS, JavaScript, and MongoDB**.
+## Features
 
-The system allows students to submit loan applications and provides administrators with a dashboard for viewing applications, monitoring loan requests, and managing application information.
+- Student loan application form
+- Loan application processing
+- View submitted applications
+- Dashboard with application statistics
+- MongoDB database for storing application data
+- Automatic loan approval decision
+- Simple and responsive user interface
 
-## 🎯 Project Purpose
+## Technologies Used
 
-The purpose of this project is to provide a simple digital solution for managing student loan applications. It reduces manual processing and makes it easier to record, review, and monitor student loan requests.
+- Python
+- Flask
+- HTML5
+- CSS3
+- JavaScript
+- MongoDB
+- Git and GitHub
 
-## ✨ Key Features
+## System Flow
 
-- 📝 Student loan application form
-- 📋 View submitted loan applications
-- 📊 Dashboard with application statistics
-- 💾 MongoDB database for storing applications
-- ✅ Automatic loan approval decision
-- ❌ Automatic rejection for applications exceeding the allowed limit
-- 📱 Responsive and simple user interface
-- 📸 Screenshots demonstrating the system
-
-## 🛠️ Technologies Used
-
-- **Python** – Backend programming
-- **Flask** – Web application framework
-- **HTML5** – Page structure
-- **CSS3** – Styling and layout
-- **JavaScript** – Client-side functionality
-- **MongoDB** – Database management
-- **Git & GitHub** – Version control and project hosting
-
-## 🔄 System Flow
-
+```text
 Student
-↓
+   ↓
 Loan Application Form
-↓
+   ↓
 Flask Backend
-↓
+   ↓
 Loan Processing
-↓
+   ↓
 MongoDB Database
-↓
+   ↓
 Application Result
+```
 
-
-## 📂 Project Structure
+## Project Structure
 
 ```text
 student-loan-system/
@@ -57,6 +49,7 @@ student-loan-system/
 ├── loan.db
 ├── requirements.txt
 ├── README.md
+├── LICENSE
 │
 ├── static/
 │   ├── script.js
@@ -73,118 +66,77 @@ student-loan-system/
     └── dashboard.png
 ```
 
-### 📄 File Description
+### File Description
 
 | File / Folder | Description |
 |---|---|
 | `app.py` | Main Flask application |
-| `loan.db` | Local database file |
 | `requirements.txt` | Python dependencies |
 | `static/` | CSS and JavaScript files |
 | `templates/` | HTML pages |
-| `screenshots/` | Project screenshots |
+| `screenshots/` | Screenshots of the application |
 | `README.md` | Project documentation |
-```
+| `LICENSE` | Project license |
 
-### Then
+## How to Run
 
-1. Add the section to your README.
-2. Click **Commit changes**.
-3. For the commit message, use:
-
-```text
-Add project structure to README
-```
-
-4. Click **Commit changes**.
-
-After that, tell me **done** and we'll move to the next improvement. 🚀
-
-## 🚀 How to Run the Project
-
-### 1. Clone the Repository
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/jupeang/student-loan-system.git
 ```
 
-### 2. Open the Project
+### 2. Open the project
 
 ```bash
 cd student-loan-system
 ```
 
-### 3. Create a Virtual Environment
+### 3. Create a virtual environment
 
 ```bash
 python -m venv venv
 ```
 
-### 4. Activate the Virtual Environment
+### 4. Activate the virtual environment
 
-**Windows:**
+On Windows:
 
 ```bash
 venv\Scripts\activate
 ```
 
-### 5. Install the Required Packages
+### 5. Install the required packages
 
 ```bash
-pip install flask pymongo
+pip install -r requirements.txt
 ```
 
 ### 6. Start MongoDB
 
-Make sure **MongoDB** is installed and running on your computer.
+Make sure MongoDB is installed and running on your computer.
 
-The system uses:
+The application uses:
 
 ```text
 mongodb://localhost:27017/
 ```
 
-### 7. Run the Application
+### 7. Run the application
 
 ```bash
 python app.py
 ```
 
-### 8. Open the System
+### 8. Open the application
 
-Open your browser and go to:
+Open your browser and visit:
 
 ```text
 http://127.0.0.1:5000
 ```
 
-The Student Loan System should now be running.
-
-## 🎥 Project Demo
-
-The Student Loan System provides a simple interface for students to submit loan applications and for administrators to view and monitor submitted applications.
-
-### Main System Pages
-
-- 🏠 **Home / Loan Application** – Students submit their loan information.
-- 📋 **Applications** – Displays submitted student loan applications.
-- 📊 **Dashboard** – Provides an overview of loan applications and statistics.
-
-The screenshots below demonstrate the main features and user interface of the system.
-## 🔮 Future Improvements
-
-The system can be further improved by adding:
-
-- 👤 Student and administrator authentication
-- 🔐 Role-based access control
-- 📧 Email notifications for loan application updates
-- 📱 Mobile application support
-- 📈 Advanced loan analytics and reporting
-- 🔎 Advanced application search and filtering
-- ☁️ Cloud database deployment
-- 🚀 Deployment to a production server
-- 🤖 Machine learning-based loan approval prediction
-## 📸 Screenshots
+## Screenshots
 
 ### Home / Loan Application
 
@@ -198,13 +150,26 @@ The system can be further improved by adding:
 
 ![Dashboard](screenshots/dashboard.png)
 
-## 👨‍💻 Author
+## Future Improvements
+
+Possible future improvements include:
+
+- Student and administrator login
+- Role-based access control
+- Email notifications
+- Advanced application search and filtering
+- Improved loan analytics
+- Mobile application support
+- Cloud deployment
+- Machine learning-based loan prediction
+
+## Author
 
 **Justus Peter**
 
-Bachelor of Computer Science
+Bachelor of Computer Science  
 South Eastern Kenya University
 
-GitHub: https://github.com/jupeang
-Portfolio: https://jupeang.github.io/my-portfolio/
-Email: [justusmalombep@gmail.com](mailto:justusmalombep@gmail.com)
+**GitHub:** https://github.com/jupeang  
+**Portfolio:** https://jupeang.github.io/my-portfolio/  
+**Email:** justusmalombep@gmail.com
